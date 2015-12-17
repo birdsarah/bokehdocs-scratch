@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../../_static/css/main.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../../_static/js/main.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../../_static/images/favicon.ico">
+
+</head>
+<body class="">
+
+  <header class="navigation" role="banner">
+  <div class="wrapper">
+    <a href="/" class="logo">
+      <img src="../../_static/images/logo.png" alt="Bokeh Logo">
+    </a>
+    <a href="/" class="navigation-menu logo-text">Bokeh</a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="section">
+    <div class="content">
+        <h2 class="title">Speeding up with WebGL</h2>
+        <div>
+          
+  <div class="section" id="speeding-up-with-webgl">
+<span id="userguide-webgl"></span><h1>Speeding up with WebGL<a class="headerlink" href="#speeding-up-with-webgl" title="Permalink to this headline">¶</a></h1>
+<p>When visualizing large datasets with Bokeh, the interaction can become
+rather slow. To counter this, one can enable WebGL, which allows
+rendering some glyph types on graphics hardware.</p>
+<div class="section" id="what-is-webgl">
+<h2>What is WebGL?<a class="headerlink" href="#what-is-webgl" title="Permalink to this headline">¶</a></h2>
+<p>WebGL is a JavaScript API that allows rendering content in the browser
+via the Graphics Processing Unit (GPU), without the need for plugins.
+WebGL is standardized and available in all modern browsers.</p>
+</div>
+<div class="section" id="how-to-enable-webgl">
+<h2>How to enable WebGL<a class="headerlink" href="#how-to-enable-webgl" title="Permalink to this headline">¶</a></h2>
+<p>To enable WebGL, set the plot&#8217;s <code class="docutils literal"><span class="pre">webgl</span></code> property to <code class="docutils literal"><span class="pre">True</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">p</span> <span class="o">=</span> <span class="n">Plot</span><span class="p">(</span><span class="n">webgl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c"># for the glyph API</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">webgl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c"># for the plotting API</span>
+</pre></div>
+</div>
+<p>Alternatively, WebGL can be explicitly enabled or disabled on a page
+by adding <code class="docutils literal"><span class="pre">?webgl=1</span></code> or <code class="docutils literal"><span class="pre">#webgl=0</span></code> to the URL.</p>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>Only a subset of Bokeh&#8217;s objects are capable of rendering in WebGL.
+Currently this is limited to the line, circle marker, and square marker. We plan
+to extend the support to more markers, lines, and other objects such
+as maps. You can safely combine multiple glyphs in a plot, of which
+some are rendered in WebGL, and some are not.</p>
+<p>The performance improvements when using WebGL varies per situation. Due
+to overhead in some places of BokehJS, we can currently not benefit
+from the full speed that you might expect from WebGL. This is also
+something we plan to improve over time.</p>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Glyphs drawn using WebGL are drawn on top of glyphs that are not drawn
+in WebGL.</li>
+<li>When the scale is non-linear (e.g. log), the system falls back to 2D
+rendering.</li>
+<li>Making a selections of markers on Internet Explorer will reduce the size
+of the markers to 1 pixel (looks like a bug in IE).</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python" id="webgl.rst.bokeh-plot-0"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_file</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">output_file</span><span class="p">(</span><span class="s">&quot;scatter10k.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;scatter 10k points (no WebGL)&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">webgl</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="webgl.rst.bokeh-plot-0.js"
+        id="e5a12c61-3323-417f-b019-ffc9c1612420"
+        async="false"
+        data-bokeh-model-id="3aea9322-4e83-4a55-b8db-012b62671801"
+        data-bokeh-doc-id="546c4fe4-f214-4704-b25d-0c05edde10e3"
+        data-bokeh-log-level="info"
+    ></script>
+    </td>
+  </tr>
+</table><div class="highlight-python" id="webgl.rst.bokeh-plot-1"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_file</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">output_file</span><span class="p">(</span><span class="s">&quot;scatter10k.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;scatter 10k points (with WebGL)&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">webgl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="webgl.rst.bokeh-plot-1.js"
+        id="1b88323d-90d4-48d9-80e1-54f6294e461f"
+        async="false"
+        data-bokeh-model-id="ed8090e6-27df-4aac-ade9-60b6201127e2"
+        data-bokeh-doc-id="886aff1d-df04-466b-9410-b4ce8a63abd6"
+        data-bokeh-log-level="info"
+    ></script>
+    </td>
+  </tr>
+</table><div class="highlight-python" id="webgl.rst.bokeh-plot-2"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_file</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">1.25</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="p">))</span>
+
+<span class="n">output_file</span><span class="p">(</span><span class="s">&quot;line10k.html&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;line10k.py example&quot;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&quot;A line consisting of 10k points&quot;</span><span class="p">,</span> <span class="n">webgl</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;#22aa22&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="webgl.rst.bokeh-plot-2.js"
+        id="e0afd780-ff33-4f04-87eb-903eb530d535"
+        async="false"
+        data-bokeh-model-id="38b95074-2956-459d-b22d-c62d345477f1"
+        data-bokeh-doc-id="dcde0149-add2-4a98-9b93-397bd6d9d885"
+        data-bokeh-log-level="info"
+    ></script>
+    </td>
+  </tr>
+</table></div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-links">
+      <ul>
+        <li><h3>About Us</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Community</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Find Us</h3></li>
+        
+      </ul>
+      <ul class="copyright">
+        <li>2013-2016, Continuum Analytics</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Analytics -->
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

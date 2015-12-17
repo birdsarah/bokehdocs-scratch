@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../../_static/css/main.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../../_static/js/main.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../../_static/images/favicon.ico">
+
+</head>
+<body class="">
+
+  <header class="navigation" role="banner">
+  <div class="wrapper">
+    <a href="/" class="logo">
+      <img src="../../_static/images/logo.png" alt="Bokeh Logo">
+    </a>
+    <a href="/" class="navigation-menu logo-text">Bokeh</a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="section">
+    <div class="content">
+        <h2 class="title">Adding Interactions</h2>
+        <div>
+          
+  <div class="section" id="adding-interactions">
+<span id="userguide-interaction"></span><h1>Adding Interactions<a class="headerlink" href="#adding-interactions" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#linking-plots" id="id1">Linking Plots</a><ul>
+<li><a class="reference internal" href="#linked-panning" id="id2">Linked Panning</a></li>
+<li><a class="reference internal" href="#linked-brushing" id="id3">Linked Brushing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-widgets" id="id4">Adding Widgets</a><ul>
+<li><a class="reference internal" href="#button" id="id5">Button</a></li>
+<li><a class="reference internal" href="#checkbox-button-group" id="id6">Checkbox Button Group</a></li>
+<li><a class="reference internal" href="#checkbox-group" id="id7">Checkbox Group</a></li>
+<li><a class="reference internal" href="#data-table" id="id8">Data Table</a></li>
+<li><a class="reference internal" href="#dropdown-menu" id="id9">Dropdown Menu</a></li>
+<li><a class="reference internal" href="#multiselect" id="id10">MultiSelect</a></li>
+<li><a class="reference internal" href="#radio-button-group" id="id11">Radio Button Group</a></li>
+<li><a class="reference internal" href="#radio-group" id="id12">Radio Group</a></li>
+<li><a class="reference internal" href="#select" id="id13">Select</a></li>
+<li><a class="reference internal" href="#slider" id="id14">Slider</a></li>
+<li><a class="reference internal" href="#tab-panes" id="id15">Tab Panes</a></li>
+<li><a class="reference internal" href="#textinput" id="id16">TextInput</a></li>
+<li><a class="reference internal" href="#toggle-button" id="id17">Toggle Button</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#defining-callbacks" id="id18">Defining Callbacks</a><ul>
+<li><a class="reference internal" href="#openurl" id="id19">OpenURL</a></li>
+<li><a class="reference internal" href="#customjs-for-widgets" id="id20">CustomJS for Widgets</a></li>
+<li><a class="reference internal" href="#customjs-for-tools" id="id21">CustomJS for Tools</a></li>
+<li><a class="reference internal" href="#customjs-for-selections" id="id22">CustomJS for Selections</a></li>
+<li><a class="reference internal" href="#customjs-for-hover" id="id23">CustomJS for Hover</a></li>
+<li><a class="reference internal" href="#customjs-for-range-update" id="id24">CustomJS for Range Update</a></li>
+<li><a class="reference internal" href="#customjs-with-a-python-function" id="id25">CustomJS with a Python function</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="linking-plots">
+<span id="userguide-interaction-linking"></span><h2><a class="toc-backref" href="#id1">Linking Plots</a><a class="headerlink" href="#linking-plots" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s often useful to link plots to add connected interactivity between plots.
+This section shows an easy way to do it using the <span class="xref std std-ref">bokeh.plotting</span> interface.</p>
+<div class="section" id="linked-panning">
+<span id="userguide-interaction-linked-panning"></span><h3><a class="toc-backref" href="#id2">Linked Panning</a><a class="headerlink" href="#linked-panning" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s often desired to link pan or zooming actions across many plots. All that is
+needed to enable this feature is to share range objects between <code class="xref py py-func docutils literal"><span class="pre">figure()</span></code>
+calls.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:27:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_linked_panning.py&#8217;</p>
+</div>
+<p>Now you have learned how to link panning between multiple plots with the
+<span class="xref std std-ref">bokeh.plotting</span> interface.</p>
+</div>
+<div class="section" id="linked-brushing">
+<span id="userguide-interaction-linked-brushing"></span><h3><a class="toc-backref" href="#id3">Linked Brushing</a><a class="headerlink" href="#linked-brushing" title="Permalink to this headline">¶</a></h3>
+<p>Linked brushing in Bokeh is expressed by sharing data sources between glyph
+renderers. This is all Bokeh needs to understand that selections acted on one
+glyph must pass to all other glyphs that share that same source.</p>
+<p>The following code shows an example of linked brushing between circle glyphs on
+two different <code class="xref py py-func docutils literal"><span class="pre">figure()</span></code> calls.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:45:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_linked_brushing.py&#8217;</p>
+</div>
+<p>Now you have learned how to link brushing between plots.</p>
+</div>
+</div>
+<div class="section" id="adding-widgets">
+<span id="userguide-interaction-widgets"></span><h2><a class="toc-backref" href="#id4">Adding Widgets</a><a class="headerlink" href="#adding-widgets" title="Permalink to this headline">¶</a></h2>
+<p>Bokeh provides a simple default set of widgets, largely based off the Bootstrap
+JavaScript library. In the future, it will be possible for users to wrap and use
+other widget libararies, or their own custom widgets. By themselves, most widgets
+are not useful. There are two ways to use widgets to drive interactions:</p>
+<ul class="simple">
+<li>Use the <code class="docutils literal"><span class="pre">CustomJS</span></code> callback (see below). This will work in static HTML documents.</li>
+<li>Use the <code class="docutils literal"><span class="pre">bokeh-server</span></code> and set up event handlers with <code class="docutils literal"><span class="pre">.on_change</span></code>.</li>
+</ul>
+<p>The current value of interactive widgets is available from the <code class="docutils literal"><span class="pre">.value</span></code>
+attribute.</p>
+<div class="section" id="button">
+<h3><a class="toc-backref" href="#id5">Button</a><a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh provides a simple Button:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:71:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_button.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="checkbox-button-group">
+<h3><a class="toc-backref" href="#id6">Checkbox Button Group</a><a class="headerlink" href="#checkbox-button-group" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh also provides a checkbox button group, that can have multiple options
+selected simultaneously:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:80:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_checkbox_button_group.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="checkbox-group">
+<h3><a class="toc-backref" href="#id7">Checkbox Group</a><a class="headerlink" href="#checkbox-group" title="Permalink to this headline">¶</a></h3>
+<p>A standard checkbox:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:88:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_checkbox_group.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="data-table">
+<h3><a class="toc-backref" href="#id8">Data Table</a><a class="headerlink" href="#data-table" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh provides a sophisticated data table widget based on SlickGrid. Note
+that since the table is configured with a data source object, any plots that
+share this data source will automatically have selections linked between the
+plot and the table (even in static HTML documents).</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:99:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_data_table.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="dropdown-menu">
+<h3><a class="toc-backref" href="#id9">Dropdown Menu</a><a class="headerlink" href="#dropdown-menu" title="Permalink to this headline">¶</a></h3>
+<p>It is also possible to include Dropdown menus:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:107:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_dropdown_menu.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="multiselect">
+<h3><a class="toc-backref" href="#id10">MultiSelect</a><a class="headerlink" href="#multiselect" title="Permalink to this headline">¶</a></h3>
+<p>A multi-select widget to present multiple available options:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">MultiSelect is currently broken. See <a class="reference external" href="https://github.com/bokeh/bokeh/issues/2495">issue 2495</a></p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:118:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_multiselect.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="radio-button-group">
+<h3><a class="toc-backref" href="#id11">Radio Button Group</a><a class="headerlink" href="#radio-button-group" title="Permalink to this headline">¶</a></h3>
+<p>A radio button group can have at most one selected button at at time:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:126:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_radio_button_group.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="radio-group">
+<h3><a class="toc-backref" href="#id12">Radio Group</a><a class="headerlink" href="#radio-group" title="Permalink to this headline">¶</a></h3>
+<p>A radio group uses standard radio button appearance:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:134:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_radio_group.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="select">
+<h3><a class="toc-backref" href="#id13">Select</a><a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<p>A single selection widget:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:142:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_select.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="slider">
+<h3><a class="toc-backref" href="#id14">Slider</a><a class="headerlink" href="#slider" title="Permalink to this headline">¶</a></h3>
+<p>The Bokeh slider can be configured with <code class="docutils literal"><span class="pre">start</span></code> and <code class="docutils literal"><span class="pre">end</span></code> values, a <code class="docutils literal"><span class="pre">step</span></code> size,
+an initial <code class="docutils literal"><span class="pre">value</span></code> and a <code class="docutils literal"><span class="pre">title</span></code>:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:151:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_slider.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="tab-panes">
+<h3><a class="toc-backref" href="#id15">Tab Panes</a><a class="headerlink" href="#tab-panes" title="Permalink to this headline">¶</a></h3>
+<p>Tab panes allow multiple plots or layouts to be show in selectable tabs:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:159:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_tab_panes.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="textinput">
+<h3><a class="toc-backref" href="#id16">TextInput</a><a class="headerlink" href="#textinput" title="Permalink to this headline">¶</a></h3>
+<p>A widget for collecting a line of text from a user:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:167:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_textinput.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="toggle-button">
+<h3><a class="toc-backref" href="#id17">Toggle Button</a><a class="headerlink" href="#toggle-button" title="Permalink to this headline">¶</a></h3>
+<p>The toggle button holds an on/off state:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:175:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_toggle_button.py&#8217;</p>
+</div>
+</div>
+</div>
+<div class="section" id="defining-callbacks">
+<span id="userguide-interaction-actions"></span><h2><a class="toc-backref" href="#id18">Defining Callbacks</a><a class="headerlink" href="#defining-callbacks" title="Permalink to this headline">¶</a></h2>
+<p>Bokeh exposes an increasing number of callbacks that can be specified
+from the <code class="docutils literal"><span class="pre">Python</span></code> layer that results in an action on the <code class="docutils literal"><span class="pre">javascript</span></code> level without
+the need of <code class="docutils literal"><span class="pre">bokeh-server</span></code>.</p>
+<div class="section" id="openurl">
+<span id="userguide-interaction-actions-openurl"></span><h3><a class="toc-backref" href="#id19">OpenURL</a><a class="headerlink" href="#openurl" title="Permalink to this headline">¶</a></h3>
+<p>Opening an URL when users click on a glyph (for instance a circle marker) is
+a very popular feature. Bokeh lets users enable this feature by exposing an
+OpenURL callback object that can be passed to a Tap tool in order to have that
+action called whenever the users clicks on the glyph.</p>
+<p>The following code shows how to use the OpenURL action combined with a TapTool
+to open an url whenever the user clicks on a circle.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:200:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_open_url.py&#8217;</p>
+</div>
+<p>Now you have learned how to open an URL when the user clicks on a glyph.</p>
+</div>
+<div class="section" id="customjs-for-widgets">
+<span id="userguide-interaction-actions-widget-callbacks"></span><h3><a class="toc-backref" href="#id20">CustomJS for Widgets</a><a class="headerlink" href="#customjs-for-widgets" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh lets you express even more advanced callbacks that must be called on
+the Javascript side in order to add custom logic and interactivity when a
+widget is used. For instance, we may want to change the data of a plot when
+a user clicks on a button or changes a slider Widget.</p>
+<p>Custom callbacks like these can be set using a CustomJS object and passing it
+as the <code class="docutils literal"><span class="pre">callback</span></code> argument to a Widget object.</p>
+<p>The code below shows an example of CustomJS set on a slider Widget that
+changes the source of a plot when the slider is used.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:221:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_widgets.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="customjs-for-tools">
+<span id="userguide-interaction-actions-tool-callbacks"></span><h3><a class="toc-backref" href="#id21">CustomJS for Tools</a><a class="headerlink" href="#customjs-for-tools" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh allows for some tool events to trigger custom Javascript callbacks that
+have access to the tool&#8217;s attributes. Below, a callback on the BoxSelectTool
+uses the selection box dimensions (accessed in the geometry field of the
+cb_data object that is injected into the Callback code attribute), in order to
+add a Rect glyph to the plot with identical dimensions.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:235:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_tools.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="customjs-for-selections">
+<span id="userguide-interaction-actions-selection-callbacks"></span><h3><a class="toc-backref" href="#id22">CustomJS for Selections</a><a class="headerlink" href="#customjs-for-selections" title="Permalink to this headline">¶</a></h3>
+<p>Bokeh also provides the means to specify the same kind of callback to be
+executed whenever a selection changes. As a simple demonstration, the example
+below simply copies selected points on the first plot to the second. However,
+more sophisticated actions and computations are easily constructed in a
+similar way.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:249:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_selections.py&#8217;</p>
+</div>
+<p>Another more sophisticated example is shown below. It computes the average <cite>y</cite>
+value of any selected points (including multiple disjoint selections), and draws
+a line through that value.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:256:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_selections_lasso_mean.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="customjs-for-hover">
+<span id="userguide-interaction-actions-hover-callbacks"></span><h3><a class="toc-backref" href="#id23">CustomJS for Hover</a><a class="headerlink" href="#customjs-for-hover" title="Permalink to this headline">¶</a></h3>
+<p>The HoverTool has a callback which comes with two pieces of built-in data: the
+<cite>index</cite>, and the <cite>geometry</cite>. The <cite>index</cite> is the indices of any points that the
+hover tool is over.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:268:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_hover.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="customjs-for-range-update">
+<span id="userguide-interaction-actions-range-update-callbacks"></span><h3><a class="toc-backref" href="#id24">CustomJS for Range Update</a><a class="headerlink" href="#customjs-for-range-update" title="Permalink to this headline">¶</a></h3>
+<p>With Bokeh, ranges have a callback attribute that accept a Callback instance
+and execute javascript code on range updates that are triggered by tool
+interactions such as a box zoom, wheel scroll or pan.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:280:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_for_range_update.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="customjs-with-a-python-function">
+<span id="userguide-interaction-actions-in-python"></span><h3><a class="toc-backref" href="#id25">CustomJS with a Python function</a><a class="headerlink" href="#customjs-with-a-python-function" title="Permalink to this headline">¶</a></h3>
+<p>A CustomJS callback can also be implemented as a Python function, which
+is then translated to JavaScript using PyScript. This makes it easier
+for users to define client-side interactions without having to learn
+JavaScript. To use this functionality you need the Flexx library
+(install with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">bokeh</span> <span class="pre">flexx</span></code> or <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">flexx</span></code>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This functionality is currently only supported on Python 3.x.</p>
+</div>
+<p>For more information about the subset of Python that is supported in
+callbacks, see the <a class="reference external" href="http://flexx.readthedocs.org/en/latest/pyscript/index.html">pyscript documentation</a>.</p>
+<p>The code below demonstrates this. Unfortunately, the way that the docs
+are generated prevents PyScript from obtaining the Python source code,
+which is why the resulting plot is not shown on this page.</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at interaction.rst:308:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/interaction_callbacks_in_python.py&#8217;</p>
+</div>
+</div>
+</div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-links">
+      <ul>
+        <li><h3>About Us</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Community</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Find Us</h3></li>
+        
+      </ul>
+      <ul class="copyright">
+        <li>2013-2016, Continuum Analytics</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Analytics -->
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

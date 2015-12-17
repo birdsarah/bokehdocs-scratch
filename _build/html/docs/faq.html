@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../_static/css/main.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../_static/js/main.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../_static/images/favicon.ico">
+
+</head>
+<body class="">
+
+  <header class="navigation" role="banner">
+  <div class="wrapper">
+    <a href="/" class="logo">
+      <img src="../_static/images/logo.png" alt="Bokeh Logo">
+    </a>
+    <a href="/" class="navigation-menu logo-text">Bokeh</a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="section">
+    <div class="content">
+        <h2 class="title">Frequently Asked Questions</h2>
+        <div>
+          
+  <div class="section" id="frequently-asked-questions">
+<span id="faq"></span><h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#general-questions" id="id1">General Questions</a><ul>
+<li><a class="reference internal" href="#how-do-you-pronounce-bokeh" id="id2"><em>How do you pronounce &#8220;bokeh&#8221;?</em></a></li>
+<li><a class="reference internal" href="#why-did-you-start-writing-a-new-plotting-library" id="id3"><em>Why did you start writing a new plotting library?</em></a></li>
+<li><a class="reference internal" href="#can-i-incorporate-bokeh-into-my-proprietary-app-or-platform" id="id4"><em>Can I incorporate Bokeh into my proprietary app or platform?</em></a></li>
+<li><a class="reference internal" href="#what-is-the-relationship-between-bokeh-and-chaco" id="id5"><em>What is the relationship between Bokeh and Chaco?</em></a></li>
+<li><a class="reference internal" href="#how-does-bokeh-compare-to-mpld3" id="id6"><em>How does Bokeh compare to mpld3?</em></a></li>
+<li><a class="reference internal" href="#does-bokeh-implement-r-s-ggplot2" id="id7"><em>Does Bokeh implement R&#8217;s ggplot2?</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#technical-questions" id="id8">Technical Questions</a><ul>
+<li><a class="reference internal" href="#does-bokeh-use-d3-js" id="id9"><em>Does Bokeh use D3.js?</em></a></li>
+<li><a class="reference internal" href="#why-not-use-something-like-vega" id="id10"><em>Why not use something like Vega?</em></a></li>
+<li><a class="reference internal" href="#how-do-i-get-the-sample-data" id="id11"><em>How do I get the sample data?</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting" id="id12">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#are-the-tools-not-working-in-chrome-cromium" id="id13"><em>Are the tools not working in Chrome/Cromium?</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-questions">
+<h2>General Questions<a class="headerlink" href="#general-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-do-you-pronounce-bokeh">
+<h3><em>How do you pronounce &#8220;bokeh&#8221;?</em><a class="headerlink" href="#how-do-you-pronounce-bokeh" title="Permalink to this headline">¶</a></h3>
+<p>Either &#8220;boh-Kay&#8221; or &#8220;boh-Kuh&#8221;.  For more information, you can
+<a class="reference external" href="http://en.wikipedia.org/wiki/Bokeh">consult Wikipedia</a> or an actual
+Japanese person.</p>
+</div>
+<div class="section" id="why-did-you-start-writing-a-new-plotting-library">
+<h3><em>Why did you start writing a new plotting library?</em><a class="headerlink" href="#why-did-you-start-writing-a-new-plotting-library" title="Permalink to this headline">¶</a></h3>
+<p>There are a number of reasons why we wrote a new Python library, but they
+all hinge on maximizing flexibility for exploring new design spaces for
+achieving our long-term visualization goals.  (Please see
+<a class="reference internal" href="../index.html#technicalvision"><span>Technical Vision</span></a> for details about those.)</p>
+<p>The client-server nature of displaying for the web is reflected in the
+fundamental architecture of the library, and also has significant impact on
+the front-end interface.  Additionally, the difficult task of coalescing
+large datasets for display on thin clients in a perceptually useful way
+demands different things of a graphics and rendering architecture than most
+of the readily-available libraries in Python today.</p>
+<p>In the meantime, we would like to remain as <em>compatible</em> with the rest of
+the Scipy and PyData ecosystems of tools as possible.  This means that we
+are very eager to get contributions that help us understanding
+configuration files from other libraries, provide API compatibility layers,
+and possibly create backends for other libraries on top of Bokeh&#8217;s
+low-level glyph API.</p>
+<p>Please see <a class="reference internal" href="../index.html#contact"><span>Contact</span></a> and get in touch with the dev team if you have
+ideas along these lines.</p>
+</div>
+<div class="section" id="can-i-incorporate-bokeh-into-my-proprietary-app-or-platform">
+<h3><em>Can I incorporate Bokeh into my proprietary app or platform?</em><a class="headerlink" href="#can-i-incorporate-bokeh-into-my-proprietary-app-or-platform" title="Permalink to this headline">¶</a></h3>
+<p>We are happy for people to do this.  We do appreciate an attribution, and
+we also would like to receive feedback about how it&#8217;s working out for your
+project.</p>
+</div>
+<div class="section" id="what-is-the-relationship-between-bokeh-and-chaco">
+<h3><em>What is the relationship between Bokeh and Chaco?</em><a class="headerlink" href="#what-is-the-relationship-between-bokeh-and-chaco" title="Permalink to this headline">¶</a></h3>
+<p>There is no direct active relationship between these two projects.  Some of
+the design choices in Chaco are reflected in the architecture of Bokeh, and
+some snippets of code from Chaco have been ported to Javascript and placed
+in BokehJS.  The goals of the two projects are quite different.  If you
+have a Chaco project that you&#8217;d like to put on the web, there is a good
+chance that you can make it work with Bokeh (since the HTML5 Canvas API is
+fairly close to Kiva&#8217;s), but at this point, you will need to write
+Javascript if you want custom interactors.  For rich client, customizable,
+interactive visualization in Python, <a class="reference external" href="http://github.com/enthought/chaco">Chaco</a> is still a good tool.</p>
+</div>
+<div class="section" id="how-does-bokeh-compare-to-mpld3">
+<h3><em>How does Bokeh compare to mpld3?</em><a class="headerlink" href="#how-does-bokeh-compare-to-mpld3" title="Permalink to this headline">¶</a></h3>
+<p>For a lightweight, python-only library that exposes most of matplotlib
+to the browser, mpld3 could be a good choice. Bokeh also intends
+to fully support the MPL interface (and hence Seaborn, pandas, and
+ggplot.py), however the main goal of Bokeh is to provide approachable
+capability for novel interactive visualizations in the browser. If you
+would like to have the benefits of HTML canvas rendering, dynamic
+downsampling, abstract rendering, server plot hosting, and the possibility
+of interacting from languages besides python, please consider Bokeh for
+your project.</p>
+</div>
+<div class="section" id="does-bokeh-implement-r-s-ggplot2">
+<h3><em>Does Bokeh implement R&#8217;s ggplot2?</em><a class="headerlink" href="#does-bokeh-implement-r-s-ggplot2" title="Permalink to this headline">¶</a></h3>
+<p>No, Bokeh does not implement R&#8217;s ggplot2 interface. Bokeh was influenced
+by Wilkinson&#8217;s Grammar of Graphics (e.g. the idea of tight, well-defined,
+composable abstractions that can be tied directly to data). However, Bokeh
+does not implement a &#8220;GoG&#8221; system. Please see <a class="reference internal" href="../index.html#technicalvision"><span>Technical Vision</span></a>
+for more details.</p>
+<p>An experimental ggplot interface was prototyped at early stages, (circa
+Bokeh 0.1), but it was never fully developed and has since been removed.
+At present there are no plans to implement R&#8217;s ggplot2 interface directly
+within Bokeh. However, since Bokeh provides some level of Matplotlib
+compatibility, it is often possible to convert plots created using the
+third-party python library <a class="reference external" href="https://github.com/yhat/ggplot">ggplot.py</a>
+into Bokeh plots very easily. There are several examples in the gallery;
+you can see one <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/gallery/step.html">here</a>.</p>
+</div>
+</div>
+<div class="section" id="technical-questions">
+<h2>Technical Questions<a class="headerlink" href="#technical-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="does-bokeh-use-d3-js">
+<h3><em>Does Bokeh use D3.js?</em><a class="headerlink" href="#does-bokeh-use-d3-js" title="Permalink to this headline">¶</a></h3>
+<p>No. D3 is very cool and its predecessor Protovis was one of the
+inspirations for Bokeh.  However, we understand the goals of D3 to be about
+providing a Javascript-based data scripting layer for the DOM, and this is
+somewhat orthogonal (at this point) to the visualization challenges that
+Bokeh is trying to tackle.  Please see <a class="reference internal" href="../index.html#technicalvision"><span>Technical Vision</span></a> for more
+details about the underlying goals and vision behind our project.</p>
+</div>
+<div class="section" id="why-not-use-something-like-vega">
+<h3><em>Why not use something like Vega?</em><a class="headerlink" href="#why-not-use-something-like-vega" title="Permalink to this headline">¶</a></h3>
+<p>We may very well end up using the Vega grammar.  For now, we need to be
+able to specifically tag certain objects with UUIDs so that the object
+graph structure can be reconstituted on the JS side.  Additionally, we
+use this JSON to reproduce Python object graphs when we load up a
+Python plot from the plot server - so we would need to make sure that Vega
+can fully encapsulate all the information we need here as well.</p>
+</div>
+<div class="section" id="how-do-i-get-the-sample-data">
+<h3><em>How do I get the sample data?</em><a class="headerlink" href="#how-do-i-get-the-sample-data" title="Permalink to this headline">¶</a></h3>
+<p>Some of the Bokeh examples rely on sample data that is not included
+in the Bokeh GitHub repository or released packages, due to their
+size. The sample data can be obtained by executing the following
+commands at a python prompt:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bokeh.sampledata</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="are-the-tools-not-working-in-chrome-cromium">
+<h3><em>Are the tools not working in Chrome/Cromium?</em><a class="headerlink" href="#are-the-tools-not-working-in-chrome-cromium" title="Permalink to this headline">¶</a></h3>
+<p>If you have a device with touchscreen capabilities, is possible that
+Chrome/Chromium is &#8220;flagged&#8221; to capture touch events which makes not
+possible to interact with the Bokeh tools with you mouse.</p>
+<p>To solve this issue you need to configure Chrome/Cromium going to the
+url bar and pasting the following:</p>
+<p><code class="docutils literal"><span class="pre">chrome://flags/#touch-events</span></code></p>
+<p>then you will see something like:</p>
+<p><code class="docutils literal"><span class="pre">Enable</span> <span class="pre">touch</span> <span class="pre">events</span> <span class="pre">Mac,</span> <span class="pre">Windows,</span> <span class="pre">Linux,</span> <span class="pre">Chrome</span> <span class="pre">OS</span>
+<span class="pre">Force</span> <span class="pre">touchscreen</span> <span class="pre">support</span> <span class="pre">to</span> <span class="pre">always</span> <span class="pre">be</span> <span class="pre">enabled</span> <span class="pre">or</span> <span class="pre">disabled,</span> <span class="pre">or</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">enabled</span> <span class="pre">when</span> <span class="pre">a</span> <span class="pre">touchscreen</span> <span class="pre">is</span> <span class="pre">detected</span> <span class="pre">on</span> <span class="pre">startup</span> <span class="pre">(Automatic,</span> <span class="pre">the</span> <span class="pre">default).</span> <span class="pre">#touch-events</span></code></p>
+<p>and a drop-down button that you have to set to <code class="docutils literal"><span class="pre">Disabled</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-links">
+      <ul>
+        <li><h3>About Us</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Community</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Find Us</h3></li>
+        
+      </ul>
+      <ul class="copyright">
+        <li>2013-2016, Continuum Analytics</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Analytics -->
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

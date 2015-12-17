@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../_static/css/main.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../_static/js/main.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../_static/images/favicon.ico">
+
+</head>
+<body class="">
+
+  <header class="navigation" role="banner">
+  <div class="wrapper">
+    <a href="/" class="logo">
+      <img src="../_static/images/logo.png" alt="Bokeh Logo">
+    </a>
+    <a href="/" class="navigation-menu logo-text">Bokeh</a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="section">
+    <div class="content">
+        <h2 class="title">User Guide</h2>
+        <div>
+          
+  <div class="section" id="user-guide">
+<span id="userguide"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p>This user guide is intended to guide you through many common tasks that
+you might want to accomplish using Bokeh. The guide is arranged by
+topic:</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="user_guide/setup.html#userguide-setup"><span>Getting Set Up</span></a></dt>
+<dd>Install Bokeh and verify your installation is working correctly.</dd>
+<dt><a class="reference internal" href="user_guide/concepts.html#userguide-concepts"><span>Defining Key Concepts</span></a></dt>
+<dd>Define and explain important preliminary concepts.</dd>
+<dt><a class="reference internal" href="user_guide/plotting.html#userguide-plotting"><span>Plotting with Basic Glyphs</span></a></dt>
+<dd>Use the simple but flexible glyph methods from the <span class="xref std std-ref">bokeh.plotting</span>
+interface to construct basic and custom plots.</dd>
+<dt><a class="reference internal" href="user_guide/charts.html#userguide-charts"><span>Making High-level Charts</span></a></dt>
+<dd>Use the high-level <span class="xref std std-ref">bokeh.charts</span> interface to create common
+statistical charts quickly and easily.</dd>
+<dt><a class="reference internal" href="user_guide/compat.html#userguide-compat"><span>Leveraging Other Libraries</span></a></dt>
+<dd>Display a wide range of plots created using <a class="reference external" href="http://matplotlib.org">Matplotlib</a>, <a class="reference external" href="http://web.stanford.edu/~mwaskom/software/seaborn">Seaborn</a>,
+<a class="reference external" href="http://pandas.pydata.org">pandas</a>, or <a class="reference external" href="https://github.com/yhat/ggplot">ggplot.py</a> as Bokeh plots.</dd>
+<dt><a class="reference internal" href="user_guide/styling.html#userguide-styling"><span>Styling Visual Attributes</span></a></dt>
+<dd>Customize every visual aspect of Bokeh plots&#8212;axes, grids, labels,
+glyphs, and more.</dd>
+<dt><a class="reference internal" href="user_guide/tools.html#userguide-tools"><span>Configuring Plot Tools</span></a></dt>
+<dd>Make interactive tools (like pan, zoom, select, and others) available
+on your plots.</dd>
+<dt><a class="reference internal" href="user_guide/layout.html#userguide-layout"><span>Laying Out Multiple Plots</span></a></dt>
+<dd>Combine multiple plots and widgets into specified layouts.</dd>
+<dt><a class="reference internal" href="user_guide/notebook.html#userguide-notebook"><span>Working in the Notebook</span></a></dt>
+<dd>Creating and display interactive plots inside Jupyter/IPython notebooks.</dd>
+<dt><a class="reference internal" href="user_guide/interaction.html#userguide-interaction"><span>Adding Interactions</span></a></dt>
+<dd>Create more sophisticated interactions including widgets or linked
+panning and selection.</dd>
+<dt><a class="reference internal" href="user_guide/cli.html#userguide-cli"><span>Using bokeh Commands</span></a></dt>
+<dd>Quickly create and iterate on Bokeh applications with the <code class="docutils literal"><span class="pre">bokeh</span></code>
+command line tool.</dd>
+<dt><a class="reference internal" href="user_guide/server.html#userguide-server"><span>Deploying a Bokeh Server</span></a></dt>
+<dd>Deploy the Bokeh Server to build and publish sophisticated data
+applications.</dd>
+<dt><a class="reference internal" href="user_guide/embed.html#userguide-embed"><span>Embedding Plots and Apps</span></a></dt>
+<dd>Embed static or server-based Bokeh plots and widgets into HTML documents
+in a variety of ways.</dd>
+<dt><a class="reference internal" href="user_guide/webgl.html#userguide-webgl"><span>Speeding up with WebGL</span></a></dt>
+<dd>Improve performance for large datasets by using WebGL.</dd>
+<dt><a class="reference internal" href="user_guide/geo.html#userguide-geo"><span>Mapping Geo Data</span></a></dt>
+<dd>Working with geographical data - Google Maps, GeoJSON, Tile Rendering.</dd>
+<dt><a class="reference internal" href="user_guide/info.html#userguide-info"><span>Learning More</span></a></dt>
+<dd>See where to go next for more information and examples.</dd>
+</dl>
+<p>The examples in the user guide are written to be as minimal as possible,
+while illustrating how to accomplish a single task within Bokeh. With a
+handful of exceptions, no outside libraries such as NumPy, Pandas, or
+Blaze are required to run the examples as written. However, Bokeh works
+perfectly well with almost any array or table-like data structure.</p>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/setup.html">Getting Set Up</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/setup.html#installing-the-bokeh-library">Installing the Bokeh Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/setup.html#verifying-your-installation">Verifying your installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/setup.html#finding-help">Finding Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/concepts.html">Defining Key Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/concepts.html#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/concepts.html#output-methods">Output Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/concepts.html#interfaces">Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/plotting.html">Plotting with Basic Glyphs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/plotting.html#creating-figures">Creating Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/plotting.html#combining-multiple-glyphs">Combining Multiple Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/plotting.html#setting-ranges">Setting Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/plotting.html#specifying-axis-types">Specifying Axis Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/plotting.html#adding-annotations">Adding Annotations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/charts.html">Making High-level Charts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#key-concepts">Key Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#bar-charts">Bar Charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#box-plots">Box Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#histograms">Histograms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#scatter-plots">Scatter Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/charts.html#chart-defaults">Chart Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/compat.html">Leveraging Other Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/compat.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/compat.html#matplotlib">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/compat.html#pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/compat.html#seaborn">Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/compat.html#ggplot-py"><code class="docutils literal"><span class="pre">ggplot.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/styling.html">Styling Visual Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#using-palettes">Using Palettes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#visual-properties">Visual Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#selecting-plot-objects">Selecting Plot Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#plots">Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#glyphs">Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#axes">Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#grids">Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/styling.html#legends">Legends</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/tools.html">Configuring Plot Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/tools.html#positioning-the-toolbar">Positioning the Toolbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/tools.html#specifying-tools">Specifying Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/tools.html#setting-tool-visuals">Setting Tool Visuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/tools.html#controlling-level-of-detail">Controlling Level of Detail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/layout.html">Laying Out Multiple Plots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/layout.html#vertical-layout">Vertical Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/layout.html#horizontal-layout">Horizontal Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/layout.html#grid-layout">Grid Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/layout.html#form-layout">Form Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/notebook.html">Working in the Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/notebook.html#displaying-inline-plots">Displaying Inline Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/notebook.html#connecting-to-bokeh-server-plots">Connecting to Bokeh Server Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/notebook.html#integrating-ipython-interactors">Integrating IPython Interactors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/interaction.html">Adding Interactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/interaction.html#linking-plots">Linking Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/interaction.html#adding-widgets">Adding Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/interaction.html#defining-callbacks">Defining Callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/cli.html">Using <code class="docutils literal"><span class="pre">bokeh</span></code> Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/cli.html#module-bokeh.command.subcommands.html">Standalone HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/cli.html#module-bokeh.command.subcommands.json">Serialized JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/cli.html#module-bokeh.command.subcommands.serve">Bokeh Server Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/server.html">Deploying a Bokeh Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/embed.html">Embedding Plots and Apps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/embed.html#standalone-html">Standalone HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/embed.html#components">Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/embed.html#ipython-notebook">IPython Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/embed.html#autoloading">Autoloading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/webgl.html">Speeding up with WebGL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/webgl.html#what-is-webgl">What is WebGL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/webgl.html#how-to-enable-webgl">How to enable WebGL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/webgl.html#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/webgl.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/webgl.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/geo.html">Mapping Geo Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/geo.html#geojson-datasource">GeoJSON Datasource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/geo.html#google-maps-support">Google Maps support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/info.html">Learning More</a></li>
+</ul>
+</div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-links">
+      <ul>
+        <li><h3>About Us</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Community</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Find Us</h3></li>
+        
+      </ul>
+      <ul class="copyright">
+        <li>2013-2016, Continuum Analytics</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Analytics -->
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>

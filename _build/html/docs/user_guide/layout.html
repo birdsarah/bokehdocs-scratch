@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../../_static/css/main.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../../_static/js/main.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../../_static/images/favicon.ico">
+
+</head>
+<body class="">
+
+  <header class="navigation" role="banner">
+  <div class="wrapper">
+    <a href="/" class="logo">
+      <img src="../../_static/images/logo.png" alt="Bokeh Logo">
+    </a>
+    <a href="/" class="navigation-menu logo-text">Bokeh</a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">Menu</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="section">
+    <div class="content">
+        <h2 class="title">Laying Out Multiple Plots</h2>
+        <div>
+          
+  <div class="section" id="laying-out-multiple-plots">
+<span id="userguide-layout"></span><h1>Laying Out Multiple Plots<a class="headerlink" href="#laying-out-multiple-plots" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#vertical-layout" id="id1">Vertical Layout</a></li>
+<li><a class="reference internal" href="#horizontal-layout" id="id2">Horizontal Layout</a></li>
+<li><a class="reference internal" href="#grid-layout" id="id3">Grid Layout</a></li>
+<li><a class="reference internal" href="#form-layout" id="id4">Form Layout</a></li>
+</ul>
+</div>
+<p>Bokeh includes several layout options for arranging plots and widgets
+in an HTML document. Note that the layout options here are all HTML
+layouts; future Bokeh versions should offer the ability to lay out
+multiple sub-plots on a single canvas.</p>
+<div class="section" id="vertical-layout">
+<span id="userguide-layout-layout-vertical"></span><h2><a class="toc-backref" href="#id1">Vertical Layout</a><a class="headerlink" href="#vertical-layout" title="Permalink to this headline">¶</a></h2>
+<p>To array a set of plots in a vertical fashion, use the <code class="xref py py-func docutils literal"><span class="pre">vplot()</span></code> function:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at layout.rst:22:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/layout_vertical.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="horizontal-layout">
+<span id="userguide-layout-layout-horizontal"></span><h2><a class="toc-backref" href="#id2">Horizontal Layout</a><a class="headerlink" href="#horizontal-layout" title="Permalink to this headline">¶</a></h2>
+<p>To array plots horizontally, use the <code class="xref py py-func docutils literal"><span class="pre">hplot()</span></code> function:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at layout.rst:32:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/layout_horizontal.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="grid-layout">
+<span id="userguide-layout-layout-grid"></span><h2><a class="toc-backref" href="#id3">Grid Layout</a><a class="headerlink" href="#grid-layout" title="Permalink to this headline">¶</a></h2>
+<p>Bokeh also provides a <code class="xref py py-func docutils literal"><span class="pre">gridplot()</span></code> function that can be used to arrange
+Bokeh Plots in grid layout. Note that <code class="xref py py-func docutils literal"><span class="pre">gridplot()</span></code> also collects all
+tools into a single toolbar, and the currently active tool is the same
+for all plots in the grid. It is possible to leave &#8220;empty&#8221; spaces in
+the grid by passing <code class="docutils literal"><span class="pre">None</span></code> instead of a plot object:</p>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p>Unable to generate Bokeh plot at layout.rst:46:</p>
+<p class="last">[Errno 2] No such file or directory: &#8216;source/docs/user_guide/source_examples/layout_grid.py&#8217;</p>
+</div>
+</div>
+<div class="section" id="form-layout">
+<span id="userguide-layout-layout-form"></span><h2><a class="toc-backref" href="#id4">Form Layout</a><a class="headerlink" href="#form-layout" title="Permalink to this headline">¶</a></h2>
+<p>To include widgets in a layout, it is currently necessary to put everything
+in a <code class="xref py py-func docutils literal"><span class="pre">vform()</span></code> layout. You can see an example of this in the section
+<a class="reference internal" href="interaction.html#userguide-interaction-actions-widget-callbacks"><span>CustomJS for Widgets</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Improving the spelling and ease-of-use of widget layouts is an area
+of active work.</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-links">
+      <ul>
+        <li><h3>About Us</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Community</h3></li>
+        
+      </ul>
+      <ul>
+        <li><h3>Find Us</h3></li>
+        
+      </ul>
+      <ul class="copyright">
+        <li>2013-2016, Continuum Analytics</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Analytics -->
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
