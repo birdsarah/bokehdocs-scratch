@@ -10,7 +10,7 @@ from tornado.ioloop import IOLoop
 _basedir = os.path.dirname(__file__)
 
 app = flask.Flask(__name__, static_path="/unused")
-PORT=5009
+PORT=5010
 
 """this is a simple server to facilitate developing the docs.  by
 serving up static files from this server, we avoid the need to use a
@@ -47,6 +47,3 @@ if __name__ == "__main__":
         import time
         import webbrowser
         time.sleep(0.5)
-        webbrowser.open("http://localhost:%d/en/latest/index.html" % PORT, new="tab")
-
-

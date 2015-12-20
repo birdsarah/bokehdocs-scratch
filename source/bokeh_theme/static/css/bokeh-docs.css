@@ -1,0 +1,110 @@
+/*
+ *  Display Class documentation
+ */
+
+code > .pre {
+    color: #2A6496;
+}
+
+.class, .section {
+    clear: both;
+}
+
+.class > dt > .headerlink {
+    padding-left: 10px;
+    color: #85398C;
+}
+
+.class {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px #2A2A2A solid;
+}
+
+.class > dt {
+    font-size: 1.3em;
+    text-align: right;
+    float: right;
+    color: #F5634A;
+}
+
+dt:target, .highlighted {
+    background-color: #EEEEDD;
+}
+
+.class > dd {
+    padding-top: 10px;
+    clear: both;
+}
+
+.attribute > dt > code:before {
+    content: ' attr ';
+    font-style: italic;
+    color: #B1CE2D;
+    font-size: 0.8em;
+}
+
+.method > dt > code:before {
+    content: ' method ';
+    font-style: italic;
+    color: #1EA354;
+    font-size: 0.8em;
+}
+
+.classmethod > dt > .property {
+    font-style: italic;
+    color: #20A7AA;
+    font-size: 0.8em;
+}
+
+.classmethod > dd > .table,
+.method > dd > .table,
+.attribute > dd > .table {
+    margin-left: 40px;
+    margin-bottom: 0;
+}
+
+/* Give things some breathing room */
+.class ~ .panel-group {
+    float: left;
+}
+
+.xref .pre {
+    font-weight: normal;
+}
+
+.highlight-python {
+    margin-bottom: 20px;
+}
+
+/* Handle the call out boxes */
+.admonition.alert {
+    color: #2A2A2A;
+    background-color: white;
+    border-color: white;
+    border: 1px white solid;
+    background-image: none;
+    box-shadow: none;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.admonition.note {
+    border-left: 2px #35A9DE solid;
+}
+
+.admonition.warning {
+    border-color: #F89E2E;
+    border-left: 2px #F89E2E solid;
+    border-bottom: 2px #F89E2E solid;
+}
+
+.simple {
+    display: inline-block;
+}
+
+.simple ~ p {
+    clear: both;
+}
